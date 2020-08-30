@@ -1,12 +1,15 @@
 
 // ES module模块引入方式引入 ，报错： 因为浏览器根本不知道import语法
-import "@babel/polyfill";
-import Header from './header.js'
-import Sidebar from './sidebar.js'
-import Footer from './footer.js'
+// import "@babel/polyfill";
+import Header from './common/header.js'
+import Sidebar from './common/sidebar.js'
+import Footer from './common/footer.js'
 import title from './title.jpg'
-import './style.css'
+import './common/css/style.css'
+// 默认-虽然只引入了add但是math中其他方法也会打包进去。Tree-Shaking
+import { add } from './common/math.js'
 
+console.log('add', add(1, 9))
 let image = new Image();
 image.src = title;
 

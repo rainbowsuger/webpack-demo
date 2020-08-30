@@ -1,0 +1,23 @@
+{
+    /*  转ES6的语法 npm install @babel/preset-env --save-dev
+      * 补充ES5中没有的变量 npm install --save @babel/polyfill，import "@babel/polyfill";适用于业务代码
+      *
+    */
+    "presets": [["@babel/preset-env", {
+      // chrome 版本67以上不用再注册map const等方法
+      "targets": {
+        "chrome": 67
+      },
+      // 只有用到的地方才会转化
+      "useBuiltIns": "usage"
+    }]],
+    // 当开发是一个组件或者js库的时候，Profill补充的变量了能会污染全局，所以使用babel/plugin-transform-runtime不会。
+    "plugins": [["@babel/plugin-transform-runtime", {
+        "absoluteRuntime": false,
+        "corejs": 2,
+        "helpers": true,
+        "regenerator": true,
+        "useESModules": false,
+        "version": "7.0.0-beta.0"
+      }]]
+  }
