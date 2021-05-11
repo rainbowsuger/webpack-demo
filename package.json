@@ -40,6 +40,6 @@
     "@babel/polyfill": "^7.10.4",
     "@babel/runtime": "^7.10.4",
     "@babel/runtime-corejs2": "^7.10.4",
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   }
 }
